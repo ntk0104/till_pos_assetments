@@ -1,0 +1,20 @@
+.menu__item {
+  padding: 5px;
+}
+
+.image_cover {
+  height: 200px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .item_cover_img {
+    width: auto;
+    max-height: 100%;
+  }
+}
+
+.ant-card-cover {
+  overflow: hidden;
+}

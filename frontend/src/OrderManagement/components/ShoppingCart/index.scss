@@ -1,0 +1,13 @@
+.cart {
+  padding: 10px;
+
+  &__list-items {
+    margin-top: 20px;
+
+    .ant-table-footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
