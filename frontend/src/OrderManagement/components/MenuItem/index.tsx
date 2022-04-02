@@ -41,7 +41,9 @@ const Menu: FC<MenuItemPropType> = ({ item = {} }) => {
             style={{ color: 'red' }}
             key="decrease"
           />,
-          <div>{quantity}</div>,
+          <div className="item_quantity" key="item_quantity">
+            {quantity}
+          </div>,
           <PlusCircleOutlined
             onClick={increaseQuantity}
             style={{ color: 'green' }}

@@ -7,11 +7,7 @@ dotenv.config()
 const app: Express = express()
 const port = process.env.PORT
 
-app.use(
-  cors({
-    origin: 'http://localhost:3000'
-  })
-)
+app.use(cors())
 
 app.get('/promotion-types', (req: Request, res: Response) => {
   res.json({
@@ -54,7 +50,7 @@ app.get('/items', (req: Request, res: Response) => {
         id: 3,
         name: 'Large Pizza',
         desc: "15' pizza for four person",
-        img: 'https://thumbs.dreamstime.com/b/isolated-round-pizza-black-background-tomatoes-aside-space-text-enlargement-italian-style-recepies-authentic-fresh-175907270.jpg',
+        img: 'https://media.istockphoto.com/photos/rich-fajita-chicken-mexican-pizza-with-olives-and-jalapenos-picture-id186818326?k=20&m=186818326&s=612x612&w=0&h=xSYUB-eFC853F_Rl8APE1rXTkEwmVE5czWTC6Cqw3xo=',
         price: 21.99
       }
     ]
