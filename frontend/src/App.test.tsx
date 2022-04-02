@@ -9,7 +9,7 @@ test('renders Pizza Company App', () => {
   expect(headerElement).toBeInTheDocument()
 })
 
-test.only('should update item quantity when increase and descrease quantity', async () => {
+test('should update item quantity when increase and descrease quantity', async () => {
   const { container } = render(<App />)
   const smallItemDesc = await screen.findByText("10' pizza for one person")
   const mediumItem = await screen.findByText("12' pizza for two person")
@@ -30,7 +30,7 @@ test.only('should update item quantity when increase and descrease quantity', as
   expect(smallItem_QtyText).toHaveTextContent('1')
 })
 
-test.only('should add item to shopping cart correctly when increase item', async () => {
+test('should add item to shopping cart correctly when increase item', async () => {
   const { container } = render(<App />)
   const smallItemDesc = await screen.findByText("10' pizza for one person")
   const mediumItem = await screen.findByText("12' pizza for two person")
@@ -67,7 +67,7 @@ test.only('should add item to shopping cart correctly when increase item', async
   expect(smallItem_cartItem_subTotal_col).toHaveTextContent('23.98')
 })
 
-test.only('should remove item to shopping cart correctly when decrease item to 0', async () => {
+test('should remove item to shopping cart correctly when decrease item to 0', async () => {
   const { container } = render(<App />)
   const smallItemDesc = await screen.findByText("10' pizza for one person")
   const mediumItem = await screen.findByText("12' pizza for two person")
@@ -97,7 +97,8 @@ test.only('should remove item to shopping cart correctly when decrease item to 0
   expect(smallItem_cartItem).not.toBeInTheDocument()
 })
 
-test.only('should set default customer to Default', async () => {
+test('should set default customer to Default', async () => {
+  render(<App />)
   const smallItemDesc = await screen.findByText("10' pizza for one person")
   const mediumItem = await screen.findByText("12' pizza for two person")
   const largeItem = await screen.findByText("15' pizza for four person")
@@ -109,7 +110,7 @@ test.only('should set default customer to Default', async () => {
   expect(defaultCustomer.value).toBe('1')
 })
 
-test.only('should calculate total normally when order with default customer', async () => {
+test('should calculate total normally when order with default customer', async () => {
   const { container } = render(<App />)
   const smallItemDesc = await screen.findByText("10' pizza for one person")
   const mediumItemDesc = await screen.findByText("12' pizza for two person")
@@ -136,7 +137,7 @@ test.only('should calculate total normally when order with default customer', as
   expect(total).toHaveTextContent('27.98 $')
 })
 
-test.only('should calculate total with promotion when order with Microsoft customer', async () => {
+test('should calculate total with promotion when order with Microsoft customer', async () => {
   const { container } = render(<App />)
   const smallItemDesc = await screen.findByText("10' pizza for one person")
   const mediumItemDesc = await screen.findByText("12' pizza for two person")
@@ -160,7 +161,7 @@ test.only('should calculate total with promotion when order with Microsoft custo
   expect(total).toHaveTextContent('23.98 $')
 })
 
-test.only('should calculate total with promotion when order with Amazon customer', async () => {
+test('should calculate total with promotion when order with Amazon customer', async () => {
   const { container } = render(<App />)
   const smallItemDesc = await screen.findByText("10' pizza for one person")
   const mediumItemDesc = await screen.findByText("12' pizza for two person")
